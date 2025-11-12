@@ -1,36 +1,45 @@
-name: Deploy Next.js
+Attempting to download 18...
+Acquiring 18.20.8 - x64 from https://github.com/actions/node-versions/releases/download/18.20.8-14110393767/node-18.20.8-linux-x64.tar.gz
+Extracting ...
+/usr/bin/tar xz --strip 1 --warning=no-unknown-keyword -C /home/runner/work/_temp/70cccaca-3cda-4acc-b4e6-c29a2f681f8b -f /home/runner/work/_temp/8d396965-26fe-4ae5-bfc4-83e9a5a3c46ename: Build and Deploy Next.js
 
 on:
   push:
     branches:
       - main
+  pull_request:
 
 jobs:
-  build-and-deploy:
+  build:
     runs-on: ubuntu-latest
 
     steps:
+      # Checkout del repositorio
       - name: Checkout repository
         uses: actions/checkout@v3
 
-      - name: Setup Node.js 20.19.5
+      # Configuración de Node.js
+      - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: 20.19.5
+          node-version: '20.19.5'  # Versión exacta
           cache: 'npm'
 
-      - name: Verify Node version
+      # Limpiar caches antiguas de Node/NPM
+      - name: Clear old Node/npm cache
         run: |
-          echo "Node version:"
-          node -v
-          echo "NPM version:"
-          npm -v
+          sudo rm -rf /usr/local/bin/node
+          sudo rm -rf /usr/local/lib/node_modules
+          npm cache clean --force
 
-      - name: Clear npm cache just in case
-        run: npm cache clean --force
-
+      # Instalar dependencias
       - name: Install dependencies
         run: npm ci
 
+      # Build del proyecto
       - name: Build Next.js
         run: npm run build
+
+      # (Opcional) Deploy o tests
+      #- name: Run tests
+      #  run: npm test
