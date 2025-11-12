@@ -1,24 +1,43 @@
-name: setup-node
-description: 'Setup Node.js ⚙️ - Cache dependencies ⚡ - Install dependencies 🔧'
-runs:
-  using: 'composite'
-  steps:
-    - name: Setup Node.js ⚙️
-      uses: actions/setup-node@v4
-      with:
-        node-version: 20.19.5
+name: Build and Deploy Next.js
 
-    - name: Remove node_modules cache
-      run: rm -rf node_modules
+on:
+  push:
+    branches:
+      - main
+  pull_request:
 
-    - name: Cache dependencies ⚡
-      id: cache_dependencies
-      uses: actions/cache@v4
-      with:
-        path: node_modules
-        key: node-modules-${{ hashFiles('package-lock.json') }}
+jobs:
+  build:
+    runs-on: ubuntu-latest
 
-    - name: Install dependencies 🔧
-      shell: bash
-      if: steps.cache_dependencies.outputs.cache-hit != 'true'
-      run: npm ci
+    steps:
+      # 1️⃣ Clona el repositorio
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      # 2️⃣ Configura Node.js
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20.19.5
+
+      # 3️⃣ Comprobar versión de Node (debug)
+      - name: Check Node version
+        run: node -v
+
+      # 4️⃣ Cache de node_modules
+      - name: Cache dependencies
+        id: cache-deps
+        uses: actions/cache@v4
+        with:
+          path: node_modules
+          key: node-modules-${{ hashFiles('package-lock.json') }}
+
+      # 5️⃣ Instalar dependencias
+      - name: Install dependencies
+        run: npm ci
+        if: steps.cache-deps.outputs.cache-hit != 'true'
+
+      # 6️⃣ Build de Next.js
+      - name: Build Next.js
+        run: npm run build
