@@ -1,5 +1,5 @@
 import { notFound } from "next/navigation";
-import type { Metadata } from "next/types";
+import type { Metadata } from "next";
 
 import type { IArticle } from "@/types/article";
 import { projects } from "@/app/data";
