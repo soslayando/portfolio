@@ -1,43 +1,36 @@
-name: Build and Deploy Next.js
+name: Deploy Next.js
 
 on:
   push:
     branches:
       - main
-  pull_request:
 
 jobs:
-  build:
+  build-and-deploy:
     runs-on: ubuntu-latest
 
     steps:
-      # 1️⃣ Clona el repositorio
       - name: Checkout repository
         uses: actions/checkout@v3
 
-      # 2️⃣ Configura Node.js
-      - name: Setup Node.js
+      - name: Setup Node.js 20.19.5
         uses: actions/setup-node@v4
         with:
           node-version: 20.19.5
+          cache: 'npm'
 
-      # 3️⃣ Comprobar versión de Node (debug)
-      - name: Check Node version
-        run: node -v
+      - name: Verify Node version
+        run: |
+          echo "Node version:"
+          node -v
+          echo "NPM version:"
+          npm -v
 
-      # 4️⃣ Cache de node_modules
-      - name: Cache dependencies
-        id: cache-deps
-        uses: actions/cache@v4
-        with:
-          path: node_modules
-          key: node-modules-${{ hashFiles('package-lock.json') }}
+      - name: Clear npm cache just in case
+        run: npm cache clean --force
 
-      # 5️⃣ Instalar dependencias
       - name: Install dependencies
         run: npm ci
-        if: steps.cache-deps.outputs.cache-hit != 'true'
 
-      # 6️⃣ Build de Next.js
       - name: Build Next.js
         run: npm run build
