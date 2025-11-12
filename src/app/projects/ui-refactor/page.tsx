@@ -1,5 +1,5 @@
 import { notFound } from "next/navigation";
-import type { Metadata } from "next";
+import type { Metadata } from "next/types";
 
 import type { IArticle } from "@/types/article";
 import { projects } from "@/app/data";
@@ -17,7 +17,7 @@ import {
 
 export const metadata: Metadata = {
   title:
-    "Devo UI refactor case study - Jose Andrés Granero - Product Designer — Specialized in UX/UI Architecture & Design Systems",
+    "Devo UI refactor case study - Jose Andrés Granero - Product Designer - Specialized in UX/UI Architecture & Design Systems",
 };
 
 const processSteps = [
@@ -272,8 +272,8 @@ export default function appRefactor() {
             height={500}
             alt="Mitre app example"
             title="Rationalized color usage by context"
-            description="Colors are now assigned based on clear functional meaning—error, warning, 
-            active, enabled, ownership, and more—creating a more predictable and accessible experience."
+            description="Colors are now assigned based on clear functional meaning: error, warning, 
+            active, enabled, ownership, and more; creating a more predictable and accessible experience."
           />
           <ArticleImageBlock
             src="/projects/ui-refactor/img/loxcope.png"
@@ -334,8 +334,8 @@ export default function appRefactor() {
             height={500}
             alt="Messaging components example"
             title="Standardized messaging system"
-            description="All user feedback components—tooltips, banners, inline messages, popups, 
-            and dialogs—were unified under a consistent style and tone, greatly improving clarity and cohesion."
+            description="All user feedback components such as tooltips, banners, inline messages, popups, 
+            and dialogs were unified under a consistent style and tone, greatly improving clarity and cohesion."
           />
           <ArticleImageBlock
             src="/projects/ui-refactor/img/contextual-help.png"
@@ -367,16 +367,15 @@ export default function appRefactor() {
         <ArticleParagraph>
           One of the most important tasks I had to accomplish during the
           refactor was supporting the development teams, as they needed to
-          migrate numerous screens — each originally built with different
-          technologies and languages — to React, while adopting the new
-          libraries for components, design tokens, and icons, among others.
+          migrate numerous screens (each originally built with different
+          technologies and languages) to React, while adopting the new libraries
+          for components, design tokens, and icons, among others.
         </ArticleParagraph>
         <ArticleParagraph>
-          Anyway, in many cases, the design team — including myself — also had
-          to take part in the code refactor, migrating legacy screens to React
-          and implementing the new design system libraries. Once this process
-          was completed, the developers integrated the frontend with the
-          backend.
+          Anyway, in many cases, the design team (including myself) also had to
+          take part in the code refactor, migrating legacy screens to React and
+          implementing the new design system libraries. Once this process was
+          completed, the developers integrated the frontend with the backend.
         </ArticleParagraph>
       </ArticleSection>
       <ArticleSection
@@ -421,7 +420,7 @@ export default function appRefactor() {
             className="order-1"
             title="Before"
             description="Before the refactor, the Alert Rules page suffered from
-              visual inconsistency — excessive icons, uneven spacing,
+              visual inconsistency: excessive icons, uneven spacing,
               unstructured data layout, and colors that didn't align with the
               brand. Accessibility issues and weak hierarchy made the interface
               hard to read and navigate."
@@ -501,8 +500,8 @@ export default function appRefactor() {
              for greater clarity and consistency, with improved spacing and better-defined areas. 
              It's now more intuitive for users to locate the actions they need. The widgets panel
               has been moved to the left side, pushing the content instead of overlapping it. 
-              Additionally, a tab system was introduced, along with dedicated toolbars for each context
-               — global, active boards management, and workspace."
+              Additionally, a tab system was introduced, along with dedicated toolbars for each context: 
+              global, active boards management, and workspace."
           />
         </ArticleGrid>
       </ArticleFeaturedWrapper>

@@ -1,5 +1,5 @@
 import { notFound } from "next/navigation";
-import type { Metadata } from "next";
+import type { Metadata } from "next/types";
 
 import type { IArticle } from "@/types/article";
 import { projects } from "@/app/data";
@@ -17,7 +17,7 @@ import {
 
 export const metadata: Metadata = {
   title:
-    "Genesys UI component library case study - Jose Andrés Granero - Product Designer — Specialized in UX/UI Architecture & Design Systems",
+    "Genesys UI component library case study - Jose Andrés Granero - Product Designer - Specialized in UX/UI Architecture & Design Systems",
 };
 
 export default function GenesysUIComponents() {
@@ -51,7 +51,7 @@ export default function GenesysUIComponents() {
           code.
         </ArticleParagraph>
         <ArticleParagraph>
-          The initiative wasn't just about components — it was about{" "}
+          The initiative wasn't just about components, it was about{" "}
           <strong>building a shared language between teams</strong>. By aligning
           design tokens, interaction patterns, and documentation, we created a
           unified toolkit that accelerated delivery and simplified
@@ -79,7 +79,7 @@ export default function GenesysUIComponents() {
             className="order-2 lg:order-1"
             title="Before"
             description="Two examples of sections before Genesys UI. 
-            Components were defined inconsistently — varying font sizes, help blocks, filters, etc."
+            Components were defined inconsistently: varying font sizes, help blocks, filters, etc."
           />
           <ArticleImageBlock
             src="/projects/genesys-ui/img/user-manage.png"
@@ -161,7 +161,7 @@ export default function GenesysUIComponents() {
                 </Link>{" "}
                 created in Storybook, so both designers and developers can check
                 the available tokens for colors, typography, spacing, sizing,
-                etc. We have an advanced search system to find tokens easily —
+                etc. We have an advanced search system to find tokens easily;
                 for example, filtering by text, regex, schema (dark/light),
                 format (JS, JSON, CSS...) and by the naming category."
               </>
@@ -184,13 +184,13 @@ export default function GenesysUIComponents() {
         <ArticleParagraph>
           The library was built in <strong>React with TypeScript</strong> using
           Styled Components for modular, themeable styling. Each component
-          resides in its own folder — logic, styles, and stories combined —
-          making the codebase predictable and maintainable.
+          resides in its own folder (logic, styles, and stories combined) making
+          the codebase predictable and maintainable.
         </ArticleParagraph>
         <ArticleParagraph>
           <strong>I helped shape a monorepo architecture</strong> designed for
-          scalability and collaboration. Each package has a clear purpose — core
-          components, utilities, tables, uploaders — all aligned under a single
+          scalability and collaboration. Each package has a clear purpose: core
+          components, utilities, tables, uploaders; all aligned under a single
           design language.
         </ArticleParagraph>
         <ArticleParagraph>
@@ -354,7 +354,7 @@ export default function GenesysUIComponents() {
             alt="Playground for components in Storybook"
             className="order-4 lg:order-3"
             title="Playground for components in Storybook"
-            description="This is a detailed view of the props playground in Storybook — in this case, the Button component.
+            description="This is a detailed view of the props playground in Storybook, in this case, the Button component.
           It represents one of the core sections of every component in the library, where designers and developers
           can interactively test different properties and instantly see the results. They can also copy the
           corresponding code snippet for any selected configuration."
@@ -367,8 +367,8 @@ export default function GenesysUIComponents() {
             height={526}
             alt="Complex components"
             title="Complex components"
-            description="The library doesn't just include foundational components like Button,
-            Badge, Tag, or Input — it also supports complex, composite ones. The example above 
+            description="The library doesn't just include foundational components (Button,
+            Badge, Tag, or Input), it also supports complex, composite ones. The example above 
             shows a date-time range floating picker, a good demonstration of how these advanced 
             components are built from smaller, foundational pieces within the same atomic ecosystem."
           />
@@ -378,15 +378,15 @@ export default function GenesysUIComponents() {
       <ArticleSection heading="Learnings & Next Steps">
         <ArticleParagraph>
           Building the component library showed that the challenge extends
-          beyond the code. <strong>Documenting everything</strong> use cases,
-          naming conventions, feedback loops — ensures alignment and long-term
+          beyond the code. <strong>Documenting everything</strong>: use cases,
+          naming conventions, feedback loops ensures alignment and long-term
           success.
         </ArticleParagraph>
         <ArticleParagraph>
           Next steps focus on <strong>improving consistency</strong> across
-          components — including prop naming, interfaces, hook usage, and
-          internal structure. We also plan to phase out Styled Components in
-          favor of a class-based approach powered by a{" "}
+          components: prop naming, interfaces, hook usage, and internal
+          structure. We also plan to phase out Styled Components in favor of a
+          class-based approach powered by a{" "}
           <strong>custom PostCSS library</strong>.
         </ArticleParagraph>
       </ArticleSection>

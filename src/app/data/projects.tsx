@@ -107,4 +107,27 @@ export const projects: IArticle[] = [
     slug: "ui-refactor",
     tags: ["Devo", "Refactor", "Data-analysis", "App", "Design system"],
   },
+  {
+    title: "Devo Dashboard UI redesign",
+    cat: ["dashboard-redesign", "featured"],
+    shortTitle: "Dashboard redesign",
+    role: (
+      <>
+        I led the redesign process from{" "}
+        <strong>research to high-fidelity prototypes</strong> (sometimes, even
+        directly coded on React), implementing reusable components and
+        collaborating closely with developers to implement the UI improvements.
+        The result is a more intuitive, scalable, and cohesive dashboard
+        experience.
+      </>
+    ),
+    description:
+      "Redesign of Devo's dashboard section to address user flow, consistency, hierarchy, and navigation issues, informed by prior research and validated through post-prototyping Maze tests.",
+    image: "/projects/dashboard-redesign/img/activeboards-redesign-thumb.png",
+    imageAlt: "Devo dashboard redesign detail",
+    imageWidth: 1300,
+    imageHeight: 790,
+    slug: "dashboard-redesign",
+    tags: ["Devo", "Redesign", "Dashboard", "Design system"],
+  },
 ];

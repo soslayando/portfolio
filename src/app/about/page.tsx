@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata } from "next/types";
 import { Article } from "../components/Article/Article";
 import { ArticleParagraph, ArticleSection } from "../components/Article";
 

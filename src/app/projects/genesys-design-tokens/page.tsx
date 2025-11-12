@@ -1,5 +1,5 @@
 import { notFound } from "next/navigation";
-import type { Metadata } from "next";
+import type { Metadata } from "next/types";
 
 import type { IArticle } from "@/types/article";
 import { projects } from "@/app/data";
@@ -18,7 +18,7 @@ import {
 
 export const metadata: Metadata = {
   title:
-    "Genesys design tokens case study - Jose Andrés Granero - Product Designer — Specialized in UX/UI Architecture & Design Systems",
+    "Genesys design tokens case study - Jose Andrés Granero - Product Designer - Specialized in UX/UI Architecture & Design Systems",
 };
 
 export default function GenesysDesignTokens() {
@@ -56,21 +56,21 @@ export default function GenesysDesignTokens() {
           as the foundation, the idea was simple: define all visual styles once
           and let automation handle the rest. With Style Dictionary, we
           generated CSS, SASS, JS, and even Figma variables directly from a
-          single source — ensuring our brand looked consistent everywhere.
+          single source, ensuring our brand looked consistent everywhere.
         </ArticleParagraph>
       </ArticleSection>
       {/* CHALLENGE ----------------------------------------------------------------------------- */}
       <ArticleSection heading="The Challenge">
         <ArticleParagraph>
           Before the tokens library, any design outside the UI components
-          library — which was already integrated with tokens — required
-          developers to manually copy values and translate them into code.
-          Naturally, this introduced small inconsistencies along the way. It was{" "}
+          library (which was already integrated with tokens) required developers
+          to manually copy values and translate them into code. Naturally, this
+          introduced small inconsistencies along the way. It was{" "}
           <strong>time-consuming, error-prone, and frustrating</strong> for
           everyone involved.
         </ArticleParagraph>
         <ArticleParagraph>
-          I realized we needed a <strong>single source of truth</strong> — not
+          I realized we needed a <strong>single source of truth</strong>, not
           just a document, but a living system where any change would ripple
           across every platform automatically. The challenge was balancing
           flexibility for designers with reliability for developers, creating a
@@ -84,7 +84,7 @@ export default function GenesysDesignTokens() {
             height={500}
             alt="A complete app powered by design tokens"
             title="A complete app powered by design tokens"
-            description="In the 'Data Search' section, every color, font, and spacing value is driven by the design token system — no manual styling required."
+            description="In the 'Data Search' section, every color, font, and spacing value is driven by the design token system, so no manual styling required."
           />
         </ArticleGrid>
       </ArticleSection>
@@ -94,7 +94,7 @@ export default function GenesysDesignTokens() {
           We built a living <strong>documentation site in Storybook</strong>,
           where every design token was neatly organized, previewed, and
           explained. It included an advanced searchable table allowing
-          developers to filter by format, tier, category, or scheme — and
+          developers to filter by format, tier, category, or scheme, and
           whenever possible, each token previewed its actual appearance.
         </ArticleParagraph>
       </ArticleSection>
@@ -104,13 +104,13 @@ export default function GenesysDesignTokens() {
           The first step was{" "}
           <strong>defining the structure of our tokens</strong> in JSON. I
           grouped them into categories like color, typography, spacing, and
-          elevation — thinking about both global and component-level scopes. The
+          elevation, thinking about both global and component-level scopes. The
           goal was clarity: anyone on the team should understand and use the
           tokens without confusion.
         </ArticleParagraph>
         <ArticleParagraph>
           Semantics and naming conventions were crucial for usability. We
-          defined three token tiers — <strong>global</strong>,{" "}
+          defined three token tiers: <strong>global</strong>,{" "}
           <strong>alias</strong>, and <strong>component</strong>:
         </ArticleParagraph>
         <ArticleList>
@@ -139,7 +139,7 @@ export default function GenesysDesignTokens() {
           Then came <strong>automation</strong>. Using Style Dictionary, we
           transformed the JSON source into multiple formats: CSS custom
           properties, SASS variables, JS constants, and Figma variables. Updates
-          became effortless — changing a single value automatically propagated
+          became effortless: changing a single value automatically propagated
           across platforms, saving time for both designers and developers.
         </ArticleParagraph>
         <ArticleParagraph>
@@ -283,12 +283,12 @@ export default function GenesysDesignTokens() {
           <strong>treat design as data</strong>. By structuring our styles as
           tokens, we bridged the gap between creative decisions and technical
           implementation, saving time and reducing errors. I also learned that
-          clear naming and documentation are essential — a system is only as
-          good as it is understandable.
+          clear naming and documentation are essential, because a system is only
+          as good as it is understandable.
         </ArticleParagraph>
         <ArticleParagraph>
           Next, we're developing an interface where designers can simply input a
-          few values — like brand colors, typography, and spacing scales — and{" "}
+          few values (brand colors, typography, and spacing scales) and{" "}
           <strong>automatically generate a new theme</strong>. This will make
           customization faster, more consistent, and scalable, especially for
           client-specific adaptations.

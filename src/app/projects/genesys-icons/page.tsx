@@ -1,5 +1,5 @@
 import { notFound } from "next/navigation";
-import type { Metadata } from "next";
+import type { Metadata } from "next/types";
 
 import type { IArticle } from "@/types/article";
 import { projects } from "@/app/data";
@@ -17,7 +17,7 @@ import {
 
 export const metadata: Metadata = {
   title:
-    "Genesys icons case study - Jose Andrés Granero - Product Designer — Specialized in UX/UI Architecture & Design Systems",
+    "Genesys icons case study - Jose Andrés Granero - Product Designer - Specialized in UX/UI Architecture & Design Systems",
 };
 
 export default function GenesysIcons() {
@@ -50,7 +50,7 @@ export default function GenesysIcons() {
         </ArticleParagraph>
         <ArticleParagraph>
           This initiative was part of a broader effort to strengthen the design
-          system's foundations — ensuring that visual language, accessibility,
+          system's foundations, ensuring that visual language, accessibility,
           and implementation were coherent across platforms. The result was a
           <strong>versatile icon library</strong> capable of evolving alongside
           the company's design language and development needs.
@@ -84,7 +84,7 @@ export default function GenesysIcons() {
             description="Two examples of sections before the creation of Genesys Icons,
           so there is a excessive use of icons, As a result, the usefulness of the icons
           is lost, because they are representing actions so complex that the icons no longer
-          clarify their meaning — instead, they add visual noise."
+          clarify their meaning, so instead, they add visual noise."
           />
           <ArticleImageBlock
             src="/projects/genesys-icons/img/icons-abuse-2.png"
@@ -233,7 +233,7 @@ export default function GenesysIcons() {
             height={543}
             alt="Storybook gallery for icons"
             title="React version playground"
-            description="The Icon React component playground on Storybook — Designers and developers
+            description="The Icon React component playground on Storybook: designers and developers
             can tweak component props, preview changes in real time, and easily copy the resulting code"
           />
         </ArticleGrid>

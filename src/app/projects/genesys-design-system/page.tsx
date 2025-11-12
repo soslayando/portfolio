@@ -1,5 +1,5 @@
 import { notFound } from "next/navigation";
-import type { Metadata } from "next";
+import type { Metadata } from "next/types";
 
 import type { IArticle } from "@/types/article";
 import { projects } from "@/app/data";
@@ -18,7 +18,7 @@ import {
 
 export const metadata: Metadata = {
   title:
-    "Genesys Design System case study - Jose Andrés Granero - Product Designer — Specialized in UX/UI Architecture & Design Systems",
+    "Genesys Design System case study - Jose Andrés Granero - Product Designer - Specialized in UX/UI Architecture & Design Systems",
 };
 
 const processSteps = [
@@ -38,7 +38,7 @@ const processSteps = [
     icon: "IoCodeOutline",
     title: "Development",
     description:
-      "Built all the system libraries — components, design tokens, icons, and styles — using React, TypeScript, Sass and Style dictionary.",
+      "Built all the system libraries: components, design tokens, icons, and styles, using React, TypeScript, Sass and Style dictionary.",
   },
   {
     icon: "IoRocketOutline",
@@ -76,7 +76,7 @@ export default function GenesysDesignSystem() {
       <ArticleSection heading="The Challenge">
         <ArticleParagraph>
           Before the design system existed, the product ecosystem faced{" "}
-          <strong>major inconsistencies</strong> — not only visual, but also in
+          <strong>major inconsistencies</strong>, not only visual, but also in
           how users interacted with the platform. Users could perform the same
           action in different ways depending on the section, leading to
           confusion and usability issues.
@@ -96,8 +96,8 @@ export default function GenesysDesignSystem() {
           and scalability across products had become almost impossible.
         </ArticleParagraph>
         <ArticleParagraph>
-          This challenge led us to create a unified Design System — not just as
-          a visual framework but as a <strong>strategic foundation</strong> to
+          This challenge led us to create a unified Design System, not just as a
+          visual framework but as a <strong>strategic foundation</strong> to
           transform how Devo designed and built its products.
         </ArticleParagraph>
       </ArticleSection>
@@ -109,7 +109,7 @@ export default function GenesysDesignSystem() {
             height={411}
             alt="Alerts creation section before the Design System"
             title="Before"
-            description="Example of the alerts creation section before the Design System — inconsistent components and layout."
+            description="Example of the alerts creation section before the Design System: inconsistent components and layout."
           />
           <ArticleImageBlock
             src="/projects/design-system/img/alert-rules.png"
@@ -117,7 +117,7 @@ export default function GenesysDesignSystem() {
             height={625}
             alt="Alerts creation section after the Design System"
             title="After"
-            description="The same section after the Design System implementation — unified layout, consistent hierarchy, and improved readability."
+            description="The same section after the Design System implementation: unified layout, consistent hierarchy, and improved readability."
           />
         </ArticleGrid>
       </ArticleSection>
@@ -203,8 +203,8 @@ export default function GenesysDesignSystem() {
       <ArticleSection heading="Research & Audit">
         <ArticleParagraph>
           Once we started the creation process, we reviewed what other companies
-          and established design systems were doing—Carbon, Material, Spectrum,
-          etc.
+          and established design systems were doing: Carbon, Material,
+          Spectrum... etc.
         </ArticleParagraph>
         <ArticleParagraph>
           This <strong>benchmarking</strong> helped us refine the structure of
@@ -244,7 +244,7 @@ export default function GenesysDesignSystem() {
             height={522}
             alt="After design system UI horizontal tabs example"
             title="After"
-            description="We didn't just inventory the components — we also adapted and
+            description="We didn't just inventory the components, we also adapted and
               refined them, removing those that were no longer needed. In this
               case, changing to an horizontal layout helped us to save space and
               improve usability."
@@ -255,7 +255,7 @@ export default function GenesysDesignSystem() {
             alt="Design system Storybook docs home"
             title="Documentation"
             description="The design system documentation was built in Storybook, following
-              a structure inspired by other established systems — including
+              a structure inspired by other established systems, including
               principles, foundations, components, and patterns."
           />
           <ArticleImageBlock
@@ -264,7 +264,7 @@ export default function GenesysDesignSystem() {
             alt="Marketplace home"
             title="Company oriented components"
             description="Our design system needed to be flexible enough to meet the needs
-              of our teams, but not as open-ended as others — like Material or
+              of our teams, but not as open-ended as others like Material or
               Carbon, for instance."
           />
         </ArticleGrid>
@@ -273,7 +273,7 @@ export default function GenesysDesignSystem() {
       <ArticleSection heading="Foundations">
         <ArticleParagraph>
           Every design system starts with a solid foundation.{" "}
-          <strong>At its core are the design tokens</strong> — colors,
+          <strong>At its core are the design tokens</strong>: colors,
           typography, spacing, grids, shadows, and borders. These tokens act as
           a single source of truth, giving every component a consistent look and
           feel. By defining them first, we make sure the system is visually
@@ -305,8 +305,8 @@ export default function GenesysDesignSystem() {
             title="Design tokens"
             description="Integrated directly into Figma through variables, allowing designers
             to apply them seamlessly within the design environment.
-            Additionally, the tokens are exported in multiple formats —
-            including CSS, SASS, JavaScript, and JSON — making them easily
+            Additionally, the tokens are exported in multiple formats:
+            CSS, SASS, JavaScript, and JSON, making them easily
             accessible for developers."
           />
           <ArticleImageBlock
@@ -358,7 +358,7 @@ export default function GenesysDesignSystem() {
             title="Layout"
             description="The layout is composed of distinct regions that define our
             information architecture. Each region serves a specific purpose and
-            contains key interactions — such as navigation, quick access to
+            contains key interactions: navigation, quick access to
             settings, datasets, or content."
           />
           <ArticleImageBlock
@@ -449,7 +449,7 @@ export default function GenesysDesignSystem() {
       {/* COMPONENTS ----------------------------------------------------------------------------- */}
       <ArticleSection heading="Components">
         <ArticleParagraph>
-          We started by identifying the most common patterns in our product —
+          We started by identifying the most common patterns in our product, and
           the building blocks users interact with every day. I had to{" "}
           <strong>inventory every way of doing things, every component</strong>{" "}
           created in the app. I also deleted or transformed not consistent or
@@ -521,7 +521,7 @@ export default function GenesysDesignSystem() {
             alt="Component design tokens example"
             title="Design tokens in action"
             description="Example of how design tokens are applied to a button component, with
-            different types — color background, color text, shape, spacing,
+            different types: color background, color text, shape, spacing,
             sizing... etc."
           />
         </ArticleGrid>
@@ -667,7 +667,7 @@ export default function GenesysDesignSystem() {
             className="order-1"
             title="Before"
             description="Before the design system, the Delivery Methods page suffered from
-              visual inconsistency — excessive icons, uneven spacing,
+              visual inconsistency: excessive icons, uneven spacing,
               unstructured data layout, and colors that didn't align with the
               brand. Accessibility issues and weak hierarchy made the interface
               hard to read and navigate."
@@ -755,8 +755,8 @@ export default function GenesysDesignSystem() {
         </ArticleParagraph>
         <ArticleParagraph>
           This is an <strong>ongoing journey</strong>. The next steps involve
-          covering more components documentation, edge cases, and patterns — the
-          Storybook{" "}
+          covering more components documentation, edge cases, and patterns, and
+          the Storybook{" "}
           <strong>documentation needs to be more complete and detailed</strong>,
           because I estimate we only covers the 40% of the components at this
           point. We also need a more atractive home and overview pages, to make
