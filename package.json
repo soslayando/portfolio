@@ -24,5 +24,10 @@
     "next": "^16.0.1",
     "tailwindcss": "^4",
     "typescript": "^5.9.3"
+  },
+  "overrides": {
+    "@auth0/nextjs-auth0": {
+      "next": "16.0.0"
+    }
   }
 }
