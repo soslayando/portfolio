@@ -1,34 +1,45 @@
-name: deploy
+name: Build and Deploy Next.js
 
 on:
   push:
-    branches: [main]
-
-permissions:
-  contents: read
-  pages: write
-  id-token: write
-
-concurrency:
-  group: pages
-  cancel-in-progress: false
+    branches:
+      - main
+  pull_request:
 
 jobs:
-  deploy:
+  build:
     runs-on: ubuntu-latest
+
     steps:
-      - uses: actions/checkout@v5
-      - uses: actions/configure-pages@v5
-      - uses: pnpm/action-setup@v4
+      # 1️⃣ Checkout del repositorio
+      - uses: actions/checkout@v3
+
+      # 2️⃣ Configurar Node 20
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
         with:
-          version: latest
-      - uses: actions/setup-node@v4
+          node-version: 20.19.5
+          cache: 'npm' # opcional: habilita cache automática por package-lock.json
+
+      # 3️⃣ Limpiar dependencias antiguas y build previo
+      - name: Clean old dependencies and build
+        run: |
+          echo "Removing old node_modules and .next folder..."
+          rm -rf node_modules
+          rm -rf .next
+
+      # 4️⃣ Cache manual de node_modules (opcional si no usas setup-node cache)
+      - name: Cache node modules
+        id: cache_dependencies
+        uses: actions/cache@v4
         with:
-          node-version: latest
-          cache: 'pnpm'
-      - run: pnpm install
-      - run: pnpm build
-      - uses: actions/upload-pages-artifact@v3
-        with:
-          path: ./out
-      - uses: actions/deploy-pages@v4
+          path: node_modules
+          key: node-modules-${{ hashFiles('package-lock.json') }}-v2
+
+      # 5️⃣ Instalar dependencias
+      - name: Install dependencies
+        run: npm ci
+
+      # 6️⃣ Build del proyecto
+      - name: Build Next.js
+        run: npm run build
