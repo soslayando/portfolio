@@ -3,7 +3,7 @@
 import * as React from "react";
 import Image from "next/image";
 import { IoLinkOutline, IoLogoFigma, IoLogoGithub } from "react-icons/io5";
-import { ArticleCardProps } from "@/types/article";
+import type { ArticleCardProps } from "@/types/article";
 
 export const ProjectsCard: React.FC<ArticleCardProps> = ({
   title,

@@ -1,11 +1,13 @@
+import { LINKEDIN_URL, MAIL_URL } from "../constants";
+
 export const Footer = () => {
   return (
     <footer className="py-8 flex bg-[var(--primary-color-strong)] px-[var(--padding-x-base)] md:px-[var(--padding-x-base-md)] text-[var(--secondary-color)]">
       <p>
-        Let’s stay in touch!
+        Let's stay in touch!
         <br /> Drop me a line at my{" "}
         <a
-          href="mailto:joseandres.granero@gmail.com"
+          href={MAIL_URL}
           className="font-bold underline underline-offset-4 decoration-1"
           title="Send me an email"
         >
@@ -13,7 +15,7 @@ export const Footer = () => {
         </a>{" "}
         or connect on{" "}
         <a
-          href="https://www.linkedin.com/in/josé-andrés-granero-encinas-539266153"
+          href={LINKEDIN_URL}
           className="font-bold underline underline-offset-4 decoration-1"
           target="_blank"
           rel="noopener noreferrer"

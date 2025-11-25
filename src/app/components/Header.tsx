@@ -1,16 +1,10 @@
 "use client";
 import * as React from "react";
-import { AnimatePresence, motion } from "framer-motion";
-import { IoHome, IoMail, IoMailUnreadOutline, IoPerson } from "react-icons/io5";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-
-import {
-  IoIosCheckmarkCircleOutline,
-  IoIosMail,
-  IoLogoGithub,
-  IoLogoLinkedin,
-} from "react-icons/io";
+import { AnimatePresence, motion } from "framer-motion";
+import { IoMail, IoLogoLinkedin } from "react-icons/io5";
+import { LINKEDIN_URL, MAIL_URL } from "../constants";
 
 export const Header = () => {
   const links = [{ href: "/about", label: "About" }];
@@ -73,18 +67,18 @@ export const Header = () => {
             <ul className="flex gap-4">
               <li>
                 <a
-                  href="https://www.linkedin.com/in/josé-andrés-granero-encinas-539266153"
+                  href={LINKEDIN_URL}
                   className="text-white text-2xl"
                   target="_blank"
                   rel="noopener noreferrer"
-                  title="Got to my Linkedin profile (new tab)"
+                  title="Go to my Linkedin profile (new tab)"
                 >
                   <IoLogoLinkedin />
                 </a>
               </li>
               <li>
                 <a
-                  href="mailto:joseandres.granero@gmail.com"
+                  href={MAIL_URL}
                   className="text-white text-2xl"
                   title="Send me an email"
                 >
@@ -124,19 +118,19 @@ export const Header = () => {
               ))}
               <li>
                 <a
-                  href="https://www.linkedin.com/in/josé-andrés-granero-encinas-539266153"
+                  href={LINKEDIN_URL}
                   className="text-white"
                   onClick={() => setMobileNavVisible(false)}
                   target="_blank"
                   rel="noopener noreferrer"
-                  title="Got to my Linkedin profile (new tab)"
+                  title="Go to my Linkedin profile (new tab)"
                 >
                   My Linkedin profile
                 </a>
               </li>
               <li>
                 <a
-                  href="mailto:joseandres.granero@gmail.com"
+                  href={MAIL_URL}
                   className="text-white"
                   onClick={() => setMobileNavVisible(false)}
                   title="Send me an email"

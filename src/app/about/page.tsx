@@ -65,7 +65,7 @@ export default function About() {
           </ArticleParagraph>
         </ArticleSection>
         <a
-          href="/assets/downloads/JAG-CV-comp.pdf"
+          href="/assets/downloads/JAG-CV-nov.pdf"
           target="_blank"
           rel="noreferrer noopener"
           title="Open the PDF in a new tab"
